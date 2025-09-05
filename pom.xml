@@ -1,29 +1,43 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>in.RAHAM</groupId>
+	<artifactId>SampleSonarQubePOC</artifactId>
+	<packaging>war</packaging>
+	<version>1.2.2</version>
+	<name>Java Home myweb</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<docker.image.prefix>kammana</docker.image.prefix>
+	</properties>	
+	<dependencies>
+		<dependency>
+		    <groupId>com.oracle.bedrock</groupId>
+		    <artifactId>bedrock-runtime-maven</artifactId>
+		    <version>5.1.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
 
-    <groupId>com.example</groupId>
-    <artifactId>my-maven-project</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+	</dependencies>
+	
+	<pluginRepositories>
+	    <pluginRepository>    
+		<id>maven1</id>
+		<name>Maven.org</name>
+		<url>http://repo1.maven.org/maven2</url>
+	    </pluginRepository>
+	</pluginRepositories>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.host.url>http://localhost:9000</sonar.host.url> <!-- Replace with your SonarQube server URL -->
-        <sonar.projectKey>my-project-key</sonar.projectKey> <!-- Unique key for your project in SonarQube -->
-        <!-- <sonar.token>your-generated-token</sonar.token> --> <!-- Optional: for authenticated scans -->
-    </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.sonarsource.scanner</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.1.2184</version> <!-- Use a compatible version for your SonarQube instance -->
-            </plugin>
-        </plugins>
-    </build>
-
-    <!-- Other project dependencies and configurations go here -->
-
+	
 </project>
+mvn sonar:sonar \
+  -Dsonar.projectKey=sonarqube \
+  -Dsonar.host.url=http://51.20.95.70:9000 \
+  -Dsonar.login=squ_0ac1a74a3602ee29ef105f3b2e226ec07987951a
