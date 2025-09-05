@@ -267,18 +267,4 @@
         </profile>
     </profiles>
 </project>
-<plugin>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-maven-plugin</artifactId>
-  <version>2.5.3</version>
-  <configuration>
-    <mainClass>com.example.JenkinsPipelineExampleApplication</mainClass>
-  </configuration>
-</plugin>
-<properties>
-  <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
-</properties>
-<properties>
-  <start-class>SampleSonarQubePOC</start-class>
-</properties>
 
